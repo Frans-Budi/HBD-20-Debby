@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Baby</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/icons/birthday-cake.png" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body class="bg-[#EEFCF2] overflow-x-hidden">
+    <audio id="mySong" controls autoplay class="hidden">
+      <source
+        src="assets/song/ECLAT - Bentuk Cinta (Official Lyric Video).mp3"
+        type="audio/mpeg"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div id="app">
+      <!-- Section 1 -->
+      <div class="container px-6 pt-8 h-screen flex flex-col">
+        <!-- Title -->
+        <div class="grow-0 text-center">
+          <h2 class="text-3xl text-[#7B857B] font-medium">
+            Selamat Ulang Tahun
+          </h2>
+          <h1 class="text-4xl text-[#6B796A] font-semibold mb-3">
+            Debby Marlina
+          </h1>
+          <hr class="border-[1.4px] border-[#9FADA0]" />
+        </div>
+        <!-- Photos -->
+        <div class="flex grow items-center justify-center">
+          <div class="relative">
+            <img
+              src="assets/images/debby.png"
+              alt="Photo Debby"
+              class="w-[180px] rounded-xl"
+            />
+            <div
+              class="rounded-full bg-[#6B796A] aspect-square flex items-center justify-center w-10 h-10 absolute -top-3 -right-3"
+            >
+              <span class="text-white text-lg">20</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Section 2 -->
+      <div class="container px-6 pt-7 mb-[80%]">
+        <!-- Card 1 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-right"
+          data-aos-delay="800"
+          id="card-1"
+        >
+          <img
+            src="assets/gif/3.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            🥳 Selamat Ulang Tahun
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="selamat-ulang-tahun"
+          ></p>
+        </div>
+        <!-- Card 2 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-left"
+          data-aos-delay="6000"
+          id="card-2"
+          v-if="showCard2"
+        >
+          <img
+            src="assets/gif/17.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            🙂 Awal Ketemu
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="awal-ketemu"
+          ></p>
+        </div>
+        <!-- Card 2A -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-left"
+          data-aos-delay="6000"
+          id="card-2A"
+          v-if="showCard2A"
+        >
+          <img
+            src="assets/gif/20.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            🤓 Masuk Perkuliahan
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="masuk-perkuliahan"
+          ></p>
+        </div>
+        <!-- Card 3 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-right"
+          data-aos-delay="800"
+          id="card-3"
+          v-if="showCard3"
+        >
+          <img
+            src="assets/gif/7.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            😌 Gabung KuliKu
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="gabung-kuliku"
+          ></p>
+        </div>
+        <!-- Card 4 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-left"
+          data-aos-delay="800"
+          id="card-4"
+          v-if="showCard4"
+        >
+          <img
+            src="assets/gif/12.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            😅 Pertemuan di Batam
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="pertemuan-di-batam"
+          ></p>
+        </div>
+        <!-- Card 5 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-right"
+          data-aos-delay="800"
+          id="card-5"
+          v-if="showCard5"
+        >
+          <img
+            src="assets/gif/2.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            😳 Semester 4
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="semester-4"
+          ></p>
+        </div>
+        <!-- Card 6 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-left"
+          data-aos-delay="800"
+          id="card-6"
+          v-if="showCard6"
+        >
+          <img
+            src="assets/gif/9.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            😧 Perasaan yang Tersakiti
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="perasaan-yang-tersakiti"
+          ></p>
+        </div>
+        <!-- Card 7 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-right"
+          data-aos-delay="800"
+          id="card-7"
+          v-if="showCard7"
+        >
+          <img
+            src="assets/gif/16.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            😤 Kilas Balik Masa UTS
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="kilas-balik-masa-uts"
+          ></p>
+        </div>
+        <!-- Card 8 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-left"
+          data-aos-delay="800"
+          id="card-8"
+          v-if="showCard8"
+        >
+          <img
+            src="assets/gif/18.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            😒 Liburan 3 Bulan
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="liburan-3-bulan"
+          ></p>
+        </div>
+        <!-- Card 9 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-right"
+          data-aos-delay="800"
+          id="card-9"
+          v-if="showCard9"
+        >
+          <img
+            src="assets/gif/8.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            😵‍💫 Tergila-gila
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="tergila-gila"
+          ></p>
+        </div>
+        <!-- Card 10 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-left"
+          data-aos-delay="800"
+          id="card-10"
+          v-if="showCard10"
+        >
+          <img
+            src="assets/gif/4.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            😁 Map Soul
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="map-soul"
+          ></p>
+        </div>
+        <!-- Card 11 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-right"
+          data-aos-delay="800"
+          id="card-11"
+          v-if="showCard11"
+        >
+          <img
+            src="assets/gif/14.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            🧐 Semester 5
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="semester-5"
+          ></p>
+        </div>
+        <!-- Card 12 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-left"
+          data-aos-delay="800"
+          id="card-12"
+          v-if="showCard12"
+        >
+          <img
+            src="assets/gif/6.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            😏 Komsel
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="komsel"
+          ></p>
+        </div>
+        <!-- Card 13 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-right"
+          data-aos-delay="800"
+          id="card-13"
+          v-if="showCard13"
+        >
+          <img
+            src="assets/gif/13.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            🤗 Berdamai
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="berdamai"
+          ></p>
+        </div>
+        <!-- Card 14 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-left"
+          data-aos-delay="800"
+          id="card-14"
+          v-if="showCard14"
+        >
+          <img
+            src="assets/gif/15.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            🥰 Berbunga-bunga
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="berbunga-bunga"
+          ></p>
+        </div>
+        <!-- Card 15 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-right"
+          data-aos-delay="800"
+          id="card-15"
+          v-if="showCard15"
+        >
+          <img
+            src="assets/gif/19.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            😘 Penutup
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="penutup"
+          ></p>
+        </div>
+        <!-- Card 16 -->
+        <div
+          class="mb-8 bg-[#fafffa] border border-[#96cfa7] rounded-lg p-4"
+          data-aos="fade-up-left"
+          data-aos-delay="800"
+          id="card-16"
+          v-if="showCard16"
+        >
+          <img
+            src="assets/gif/11.gif"
+            class="w-1/2 border-b-2 border-[#6B796A]"
+          />
+          <h3 class="pt-3 pb-1 text-2xl text-[#859385] font-semibold">
+            ❤️ Terima Kasih
+          </h3>
+          <p
+            class="text-base text-[#859385] text-justify font-normal"
+            id="terima-kasih"
+          ></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script>
+      var confettiSound = new Audio(
+        "assets/song/Confetti Party Popper _ Free Sound Effect.mp3"
+      );
+      var confettiSoundEnd = new Audio(
+        "assets/song/25 confetti Sound effect.mp3"
+      );
+
+      function playConfettiSound() {
+        confettiSound.pause(); // Pause the sound in case it's already playing
+        confettiSound.currentTime = 0; // Reset the sound to the beginning
+        confettiSound.play(); // Play the sound
+      }
+
+      setTimeout(function () {
+        confetti({
+          particleCount: 350,
+          spread: 100,
+          startVelocity: 70,
+          angle: 120,
+          origin: { y: 0.8, x: 1.2 },
+        });
+        playConfettiSound();
+      }, 200);
+
+      setTimeout(function () {
+        confetti({
+          particleCount: 350,
+          spread: 100,
+          startVelocity: 70,
+          angle: 40,
+          origin: { y: 0.4, x: -0.5 },
+        });
+        playConfettiSound();
+      }, 1200);
+
+      setTimeout(function () {
+        confetti({
+          particleCount: 350,
+          spread: 100,
+          startVelocity: 70,
+          angle: 120,
+          origin: { y: 0.8, x: 1.2 },
+        });
+        playConfettiSound();
+        confettiSoundEnd.play();
+      }, 2600);
+    </script>
+
+    <!-- Vue JS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- TypeIt -->
+    <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            showCard2: false,
+            showCard2A: false,
+            showCard3: false,
+            showCard4: false,
+            showCard5: false,
+            showCard6: false,
+            showCard7: false,
+            showCard8: false,
+            showCard9: false,
+            showCard10: false,
+            showCard11: false,
+            showCard12: false,
+            showCard13: false,
+            showCard14: false,
+            showCard15: false,
+            showCard16: false,
+          };
+        },
+        mounted() {
+          const vm = this;
+
+          const performTypeItAnimation = (selector, strings) => {
+            return new Promise((resolve) => {
+              new TypeIt(selector, {
+                strings,
+                speed: 60,
+                waitUntilVisible: true,
+                afterComplete: function () {
+                  resolve(); // Resolve the Promise when animation completes
+                },
+              }).go();
+            });
+          };
+
+          (async function () {
+            // Card 1
+            await performTypeItAnimation("#selamat-ulang-tahun", [
+              "Hari demi hari, minggu demi minggu, bulan demi bulan, tahun demi tahun, gak terasa sekarang udah tahun yang ke-20 sejak lu lahir tahun 2004. Mungkin wa cuma salah satu orang dari sekian banyak orang yang mengucapkan selamat ulang tahun ke lu. Tapi izinkan wa kali ini untuk menceritakan sebagian dari perjalanan kita bersama, mulai dari awal kita ketemu sampai memperjuangkan hubungan kita sekarang.",
+            ]);
+            vm.showCard2 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 2
+            await performTypeItAnimation("#awal-ketemu", [
+              "Tahun 2021 merupakan tahun dimana kita sama-sama lulus dari SMA, setelah kita melalui proses seleksi UTBK yang sulit. Selain itu di tahun sama juga merupakan tahun dimana kita saling kenal untuk pertama kali nya dimana wa berusia 18 tahun dan lu berusia 17 tahun. Sebelum masuk ke dunia perkuliahan, pihak kampus menyelenggarakan program gratis berupa pelatihan pemrograman yaitu Progate. Banyak cerita lucu disitu, mulai dari wa yang mengira lu itu Cowo lah dan lainya. Tapi pertemuan wa dengan tim progate itu seru banget menurut wa dimana wa bisa merasakan kerja tim saling kolaborasi untuk membuat suatu produk website yang materi nya udah kita pelajari selama 1 bulan penuh. Oh ya, lu pun juga sempat menganggap wa sebagai Kating lu karena lu ngeliat wa kayak jago banget gitu, padahal sih sebenarnya biasa aja menurut wa. Tapi emang gak salah juga sih kalo menurut lu wa itu kayak kating, karena emang kita secara usia berselisih 1 tahun.",
+            ]);
+            vm.showCard2A = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 2A
+            await performTypeItAnimation("#masuk-perkuliahan", [
+              "Setelah selesai dari Progate itu pun kita sebenarnya masih menjalin kontak selama berbulan-bulan sampai masuk perkuliahan. Wa awalnya kecewa karena ternyata wa sama lu itu beda kelas, wa di kelas A dan lu di kelas B. Karena perbedaan itu juga lah yang memisahkan kita, sempat sampai berbulan-bulan atau bahkan 1 atau 2 semester gitu kita gak kontak-kontakan lagi. Wa juga bingung sih pada saat itu, sekaligus ngerasa itu wajar karena emang beda kelas, jadi gak banyak kepentingan kita yang sama. Walaupun masih sama-sama 1 angaktan.",
+            ]);
+            vm.showCard3 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 3
+            await performTypeItAnimation("#gabung-kuliku", [
+              "Sampai akhirnya wa join KuliKu dan karena itu wa jadinya pindah ke kelas B. Sebenarnya wa juga udah lupa kapan kita saling kontak-kontakan lagi. Tapi setelah wa masuk kelas B, wa merasa kita jadi sering kontak-kontakkan lagi. Banyak lah yang kita bahas. Disitu juga kita mulai asik dan ngasih jokes-jokes dan lain-lain. Pada saat itu wa merasa lu adalah sahabat wa yang gak dipulikasi, beda lah sama Firna yang orang-orang juga pada tahu.",
+            ]);
+            vm.showCard4 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 4
+            await performTypeItAnimation("#pertemuan-di-batam", [
+              'Oh iya wa mau kilas balik tentang pertemuan kita di batam waktu itu, wa lupa deh pada saat itu semester berapa, tapi yang wa ingat pada saat itu kayaknya masih masa-sama covid-19, dan perkuliahan juga masih Online. Dan kita juga kayaknya ketemuan pas lagi masa-masa libur semester. Pada saat itu, wa gak ada perasaan sama sekali ke lu. Mungkin lu juga sebaliknya. Tapi pada saat itu wa sebenarnya antusias untuk melihat teman dekat wa secara langsung, yang pada saat itu wa cuma bisa kontak-kontakan lewat WA aja dan emang pengen aja ketemuan secara offline. <br /><br /> Sebenarnya pada saat itu banyak banget saudara-saudara wa atau bahkan adik-kakak wa nge cie cie wa. Pada saat itu, wa kayak bener-bener marah karena emang wa sama sekali gak ada perasaan ke lu dan menggap lu sebagai teman biasa aja gitu jadi, yaa gak perlu di cie-cie in lah. Tapi wa masih ingat perkataan saudara wa waktu itu kayak "Kalo i e peng iyu sui terus gam juga, yaudah ma kak i kek hun aja lo", Anjirr pas wa pertama kali denger itu kayak langsung marah, karena mereka kayak enteng aja gitu ngomong nya. Dalam hati wa juga kayak "enak aja, wa masih mau temanan aja, gak mau pacaran dulu selama kuliah". Tapi kalo sekarang mungkin wa akan malu ke saudara-saudara wa karena malah bener pula kata mereka, Wkwkwkwk, malah jadi beneran pacaran, Hehehehe',
+            ]);
+            vm.showCard5 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 5
+            await performTypeItAnimation("#semester-4", [
+              "Oke masuk ke semester 4, yang wa sangat ingat jelas tuh, model rambut lu yang berponi. Wa gak tahu kenapa ya seperti merasa disihir aja gitu, di semester 4 ini lah wa mulai suka sama lu Deb. Setiap ada kelas offline, wa selalu ngelirik ke arah lu kalau ada kesempatan tertentu. Wa merasa terpukau dengan penampilan baru lu dan wa senang bisa ngelirik lu diam-diam. Walaupun wa gak tahu lu sebenarnya sadar atau enggak. <br /><br /> Di semester 4 ini lah, perasaan wa mulai tumbuh, wa mulai jadi suka banget sama lu, dan wa merasa pengen memiliki lu, Tetapi tentu aja wa belum ada keberanian untuk itu. Belum lagi pada saat itu wa berpikir untuk tidak pacaran dulu sampai lulus kuliah, dan masih banyak pertimbangan lainnya. Salah satu pertimbangannya itu kita beda suku, tapi untungnya sih masih satu agama. <br /><br /> Hari demi hari pun lewat, perasaan wa makin tumbuh dan bener-bener gk tahan, sampai-sampai wa gak peduli lagi dengan suku lu apa. Pada saat itu wa jadi mikir bahwa yang paling penting itu adalah hidup setelah pernikahannya, bukan masalah-masalah sepele seperti perbedaan suku tertentu. Wa akui bahwa saat itu wa udah jatuh hati ke lu.",
+            ]);
+            vm.showCard6 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 6
+            await performTypeItAnimation("#perasaan-yang-tersakiti", [
+              "Mulai ada rasa cemburu saat lu di deketin cowo lain, terus bisa sampai ngobrol-ngobrol asik. Betapa sakitnya wa melihat lu bisa ngobrol bebas dengan cowo-cowo lain di kelas. Sedangkan wa merasa kecil, wa cuma bisa ngobrol dengan lu lewat WA aja, belum berani ngajak ngobrol secara langsung di kelas. Pada saat itu, wa merasa gak berdaya dan merasa gak bisa ngapain-ngapain lagi, selain menunggu kelas perkuliahan selesai, dan setelah pulang ke kosan masing-masing. Tapi untungnya respon Lu ke Wa bagus-bagus aja dan tetap fun-fun aja. Disitu wa kayak merasa lebih tenang lah. Cuma wa tetap kayak gak bisa terima aja kondisi gitu. <br /><br /> Puncaknya itu ada di akhir-akhir semester 4, yang kita bikin Santana Dex itu. Pada saat itu Lu naik panggung untuk nyanyi. Pada saat itu, wa bener-bener merasa rendah gitu, kayak lu itu terlalu tinggi untuk wa, sampe bisa tampil di atas panggung nyanyi gitu, di liatin banyak orang, yang tentu nya wa gk bisa di posisi kayak lu. Pada saat itu lu tampil dengan penampilan yang Menawan dan bikin hati wa merona-rona. Sedangkan wa cuma bisa ngeliatin dari bawah, termasuk orang-orang atau teman-teman yang lainnya. Wa jadi merasa wa hanya salah satu orang yang mengincar lu dari antara puluhan cowo lainnya yang ngincar lu juga. Perasaan wa bener-bener sedih karena gak bisa deketin lu dan gak berani ngajak ngobrol secara langsung.",
+            ]);
+            vm.showCard7 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 7
+            await performTypeItAnimation("#kilas-balik-masa-uts", [
+              "Sebenarnya ada lagi selain acara Santana Dex itu, yaitu Kopi Rempah itu, Kalo gak salah itu pas masa UTS deh, Pada saat itu wa juga udah jatuh hati ke lu, Jadi setiap kali ada kesempatan wa akan ngelirik lu. Dan emang sakit sih lu ngobrol-ngobrol dan ketawa-ketawa sama cowo lain, terutama sama Adam waktu itu, wkwkwkkwkwk. Wa gak tahu kenapa masih ingat aja tuh, pas udah mau-mau pulang gitu, lu sama Adam ngobrol-ngobrol, tapi gak tahu apa yang diobrolin. <br /><br /> Walaupun di sisi lain wa juga merasa bahwa kayaknya gak mungkin lu mau sama Adam ataupun sebaliknya, karena perbedaan keyakinan gitu. Tapi tetap aja wa sebagai cowo masih cemburu, Hehehe.",
+            ]);
+            vm.showCard8 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 8
+            await performTypeItAnimation("#liburan-3-bulan", [
+              "Nah lewat lah itu masa perkuliahan, dan masuk masa-masa liburan selama 3 bulan. Sebelum liburan itu memang wa sengaja cari-cari sesuatu yang bisa membuat lu deket sama wa, kayak wa ajak belajar bareng waktu itu. Berjalan dengan baik sih, cuman ada 1 hal yang wa agak kecewa waktu itu, Lu kayak cenderung menolak kalau diajak zoom atau WA call secara langsung, jadi kita memang tetap belajar bareng, tapi cuma lewat chat-chatan aja, Jujur itu belajarnya kurang efektif sih, karena kayak harus nunggu-nunggu lu bales, dan emang kita juga punya kesibukan yang berbeda-beda. <br /><br /> Pada saat itu, wa kayak masih gambling gitu, kayak di satu sisi ini orang udah punya pacar belum ya?. Dan wa pikirnya kayak masa sih orang seCantik dia belum ada pacar nya gitu. Lagi-lagi wa merasa inferior. Lama-lama wa merasa gak peduli dan memutuskan untuk tetap berhubungan aja, walaupun seandainya pada saat itu dia beneran punya pacar gitu. Yaahh gapapa lah kalau pun seandainya dia udah punya, setidaknya wa masih bisa jadi teman deket aja atau bahkan sahabatnya dia.",
+            ]);
+            vm.showCard9 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 9
+            await performTypeItAnimation("#tergila-gila", [
+              'Honestly selama liburan itu, wa sering ngeliat IG lu sama IG Basecamp. Itu tuh lagi fase-fase nya wa bener-bener tergila-gila sama lu, rasa ingin memiliki lu. Yang wa sering lihat bolak balik itu story IG lu yang "fwens" ama "me" itu. Sedangkan kalau di Basecamp wa suka lihat lu yang "tiktokers" itu, kalo gak salah dulu namanya bukan itu deh. <br /><br /> Wa bener-bener kayak tersihir lihat lu disitu, Apa lagi yang lagu nya itu "If we ever broke up", yang kalian ambilnya sampe 5 shoot tuh, wkwkwk. Itu semua wa liatin terus-terusan setiap hari, sangking tergila-gilanya wa sama lu. Terus kalau Story IG lu yang "me", wa paling suka lihat video yang lu ambil sama ZKP, lagunya itu yang "Sure Thing Speed Up". Sampe wa cari in gak tuh lagunya wkwkwk. Aarghh 🫠 Cantik banget ini orang. dia.',
+            ]);
+            vm.showCard10 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 10
+            await performTypeItAnimation("#map-soul", [
+              "Oh ya, yang pas Map Soul itu juga wa sebenarnya terpukau dengan penampilan lu, sampe jadi malu-malu wa lihat lu Hehehe. Kan ada tuh sempat kayak cowo-cowo kelompok meja wa pada pergi semua, lupa wa karna apa tuh. Terus lu ada kayak manggil wa untuk gabung ke meja lu gitu. Yaa pada saat itu wa menolak sih karena kayak masih malu aja gitu, apa lagi wa merasa gak pede karena penampilan wa biasa-biasa aja saat itu. Emang wa nya sih yang gak ngerti style dan emang gak niat ke situ. Tapi wa gk tahu sih apakah lu udah suka sama wa atau belum pada saat itu.",
+            ]);
+            vm.showCard11 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 11
+            await performTypeItAnimation("#semester-5", [
+              'Nah sampe masuklah semester 5, Pada saat itu wa udah memutuskan untuk deketin lu. Wa gak terlalu ingat sih kejadian di awal-awal semester, di bulan-bulan Juli, November, September, kayaknya biasa-biasa aja waktu itu, gak ada kejadian yang memoriable gitu. Tapi menurut wa awal mula hubungan kita tuh dimulai dari bulan Oktober, Wa sempat juga oper ke lu makanan kucing gitu. Pada saat itu wa gak mau tunggu lu makan nasi goreng di situ sampe selesai atau bahkan ikut makan bareng, karena wa masih gak mau kalau ada teman-teman kita lewat terus nge cie-cie in gitu. Walaupun emang pada saat itu wa udah jatuh hati sama lu. Pada saat itu wa bener-bener anti banget kalau keluar sama cewe apalagi cuman berdua aja. Takut ada yang salah paham dan menganggap wa udah pacaran gitu. Apalagi banyak banget orang yang menganggap wa pacaran sama Firna. Makanya di masa-masa itu wa gak mau lagi keluar cuman berdua doang sama cewe, Termasuk Firna, jadi wa biasanya minimal ngajakin Syahrul gitu, biar jadinya bertiga. <br /><br /> Tapi gak tahu ya sejak kapan wa jadi berani ngajak lu berdua aja untuk makan bareng. Pada saat itu wa mulai bereksperimen tanya ke lu, apakah lu mau kalau wa ajakin makan berdua aja. Kirain respon lu bakal kayak yang enggak mau gitu, entah mungkin karena udah punya pacar atau emang sama sekali gak tertarik sama wa. Tapi ternyata respon lu mau, dan wa merasa kayaknya ini orang juga mau nih sama wa. Terus makan lah itu kita bakso itu untuk pertama kali nya jalan berdua doang. Ehhh malah ketahuan pula sama Firna. Agak Shock aja gitu, anjirlah niatnya mau sembunyi-sembunyi, malah ketahuan di hari pertama, wkwkwkwk. <br /><br /> Oh ya, tapi sebelum itu wa jadi teringat, wa pernah deep talk sama lu di posisi masih temat dekat aja di IG. Wa kayak tanya-tanya tentang lu dan keluarga lu. Kayak di keluarga lu ada yang merokok gak, terus lu ada penyakit bawaan gak gitu, terus wa juga sempat tanya keluarga lu bakal bolehin gak kalo lu sama yang beda suku gitu. Arghh kayaknya udah ketahuan banget sih itu wkwkwk. Walaupun waktu itu kita masih menyamar-nyamar gitu lo, kayak masih pakek perumpamaan "seandainya". Tapi intinya emang udah banyak lah Deep Talk yang kita lewati bahkan masih jadi teman dekat aja waktu itu.',
+            ]);
+            vm.showCard12 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 12
+            await performTypeItAnimation("#komsel", [
+              'Terus setelah pertemuan berikutnya, kita sama-sama ke komsel bareng. Pada saat itu wa kayak masih ngeledek-ledek lu aja gak join komsel, dan di jadi in jokes gitu. But Suprisingly lu malah mau ikut wkwkkw. Pas pertama kali komsel, lu pergi masih pakek maxim, pulangnya dianterin teman komsel yang pakek mobil itu. Pada saat itu wa merasa kayak bukan cowo aja gitu, kayak gak bisa nganterin lu pulang. Sakit juga sih lihat lu pulang sama cowo lain, walaupun wa tahu gak mungkin juga lah, soalnya orang itu juga bilang udah punya pacar dari orang Medan gitu. Sebenarnya kayak oke lah gapapa, gak jadi masalah besar juga. <br /><br /> Baru pas minggu depannya itu lagi, timbul masalah, awalnya sih pas lu pergi ke komselnya sendiri gak ada masalah, tapi setelah pulangnya lah, Busettt, untuk pertama kalinya lu ngambek wkwkwkwk. Pada saat itu wa masih merasa malu sih kalo kita sampe di cie-cie in atau bahkan dianggap pacaran gitu. Jadi ya pada saat itu wa lihat lu di luar dan lagi ngobrol-ngobrol sama yang lain juga, jadi wa langsung balik aja tuh naik sepeda. Tapi setelah nya itu wa merasa kok kayak aneh banget ni orang gitu. Pas wa tanya-tanya lu, Ya lu agak slow resppon dan sekali nya respon pun bales nya singkat-singkat gitu. Awalnya wa masih polos dan emang gak thu gimana cara nya ngetreat cewe gitu. Jadi yaa wa biarin aja gitu, Soalnya lu nya juga balesnya singkat-singkat aja. Pada saat itu wa bener-bener overthingking gitu, dalam hati wa kayak "Apaaa lah salah wa", soalnya wa emang gak merasa salah disitu, soalnya wa sendiri pun selama ini kalau pergi pulang komsel nya juga sendiri-sendiri aja gitu, mana ada teman gitu. Tapi yaa tertanya lu menunjukkan kesalahan wa, dan wa baru ngerti salah wa itu di mana. Ternyata wa emang seharusnya temanin lu dulu sampai pulang, sebagai etika dalam berteman. Maafkan wa yang tidak Peka ini ya Bebb',
+            ]);
+            vm.showCard13 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 13
+            await performTypeItAnimation("#berdamai", [
+              "Nah, semenjak itu lah kita mulai maaf-maafan, terus kayak coba cari solusi, sampai akhirnya wa memberanikan diri untuk minjam motor teuku. Pada saat itu wa juga sebenarnya udah di cie-cie in sama Teuku dan bahkan Bu Bet yang entah dari mana kok bisa tahu pun nge cie-cie in juga. Semenjak punya akses ke motor itu lah, baru kita berpeluang besar ke mana-mana berduaan gitu, entah ke komsel bareng, ke gereja bareng, makan bareng, dll. Semenjak itu wa kayak merasa makin yakin bahwa lu juga pasti ada perasaan ke wa, soalnya lu gak menolak ajakan wa gitu, yang seharusnya kalau lu udah punya pacar atau gak tertarik sama wa, lu pasti nolak wa juga kan.",
+            ]);
+            vm.showCard14 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 14
+            await performTypeItAnimation("#berbunga-bunga", [
+              'Masuk ke momen berikutnya yaitu momen ketika tim KuliKu menang lomba yang atas nama BangunAja. Nah disitu ketika wa menang dan dapat bunga, wa merasa ini bisa jadi kesempatan wa untuk ngungkapin perasaan wa ke lu. Walaupun awalnya wa agak ragu, bisa aja wa ditolak kan. Terus mereka bertiga yang lain: Aji, Amel, ama Teuku juga, gak ngasih ke siapa-siapa bunganya, di keep sendri aja. Mereka sih bilangnya "Saya mau ngasih bunga ini ke orang yang paling saya cintai, yaitu diri saya sendiri", pas wa denger itu kek iya juga ya, ada bener nya juga. Tapi bukan berarti wa gak mecintai diri wa sendiri ya, hanya karna soal bunga ini. Wa sih mikirnya, kalaupun seandainya wa keep bunga ini, wa juga gak akan merasa senang atau bangga banget karena bagi wa bunga itu cuma simbol aja, bukan intinya. Apalagi bunga nya hidup dan sewaktu-waktu pasti bakal jadi sampah juga karena membusuk. Jadi ya wa mikirnya kenapa enggak ngasih ke orang yang wa sukai aja, pasti dengan wa ngasih bunga ini ke lu, Lu pasti senang dan menganggap bunga ini bervalue tinggi bagi lu, dan itu juga bisa jadi sarana wa untuk confess ke Lu. Why Not?. Ketika Lu senang, Wa pun ikut senang. <br /><br /> Oke lah setelah menang dan mau pulang, kan keesokan harinya itu hari minggu ya, dan pas malam-malam di bis untuk perjalanan pulang ke Tasik, wa sempat ada chat Lu, Mau gak kalau kita pergi ke gereja nya barengan. Terus lu responnya kayak agak lama gitu lo, dan jawaban Lu kayak ngasal-ngasal gitu, gak ngasih jawaban yang tegas gitu. Sampe akhirnya wa bilang ke Lu bahwasan kalau lu mau nolak juga gapapa kok gitu, wa juga gak akan maksa. Eehh ternyata setelah wa mempertegas lagi, Lu mau barengan. Waaahh pada saat itu wa legah banget sih, ternyata kemungkinan besar lu juga mau sama wa. <br /><br /> Tapi pas hari minggu nya wa agak kaget kenapa amel itu ngasih bunga nya ketika pas-pasan lu lagi dandan dan mau barengan sama wa ke Gereja sore hari itu gitu. Wa kira kayak udah ketahuan lah gitu Wa suka sama Lu secara tertulis, eh ternyata belum wkwkwk. Jadi yaa pas mau pulang dari makan hamburger itu lah baru wa bilang ke Lu kalo ada surat yang wa tulis untuk Lu disitu. Wa ngiranya Lu ngerti mandarin juga, rupanya enggak, soalnya orang pemula yang baru belajar juga biasanya ngerti itu, soalnya itu kata umum yang sering dipelajari pas awal-awal belajar mandarin gitu. Setalah wa anterin Lu pulang, mulai lah itu momen-momen penentuan, apakah lu mau menerima cinta wa atau menolak nya. Banyak drama dan hal-hal emosional lainnya, sampai akhirnya lu cari sendiri terjemahan dari 4 kata sederhana itu. Mungkin itu kata-kata yang paling singkat, sekaligus yang paling banyak menjawab pertanyaan Lu tentang Wa. Waahh Legah banget rasanya ternyata Cinta wa terbalaskan juga. Lu juga ternyata suka sama Wa. Hahaha. Semenjak itu tanggal 30 Oktober menjadi tanggal awal perjalanan kita menjalin sebuah hubungan yang lebih jelas. Gak yang cuman perasaan wa atau lu aja gitu.',
+            ]);
+            vm.showCard15 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 15
+            await performTypeItAnimation("#penutup", [
+              "Banyak proses dan rintangan yang kita lewati bersama. Susah senang, Enak pahit nya kita terima sama-sama. Entah dari Lu nya yang ngambek karena kata-kata wa yang cukup menyakitkan bagi Lu, saat wa terbuka, atau Wa yang ngambek karena lu yang slow respon karena lagi diluar dan lagi kumpul sama teman-teman yang lain. <br /><br /> Kita juga udah pernah ngomongin hal-hal yang serius, kayak rencana kita kedepannya, rencana LDR nya seperti apa, masalah finansialnya, masalah perbedaan suku nya, masalah restu dari orang tua kita masing-masing, dan masih banyak lainnya. Memang sih setelah menjalankan LDR dimana kita selama 3 bulan lalu gak bisa ketemuan itu kayak gak nyaman banget. Pengennn Bangett bisa ketemuan secara langsung, apalagi ketika Lu liburan selama 3 hari di Malaysia dan Singapura itu, Wa kayak bener-bener sedih dan bener-bener merasa kehilangan Lu banget, karena wa cuma bisa chatingan sama Lu hanya ketika terlalu pagi atau enggak terlalu malam. Momen itu menyadarkan wa betapa berharganya setiap menit yang Lu bisa luangkan untuk wa.",
+            ]);
+            vm.showCard16 = true;
+            await setTimeout(() => {}, 100);
+
+            // Card 16
+            await performTypeItAnimation("#terima-kasih", [
+              "Terima Kasih Sayang, Karena sudah mau nemanin wa dari nol ini, mau merintis lagi dari awal, kita bukan datang dari keluarga konglomerat yang punya akses kekayaan tak terbatas, tapi kita justru datang dari hati dan jiwa yang tangguh, yang mau menerima dan berjuang dengan tulus dan semangat untuk meraih cita-cita kita, termasuk memperjuangkan hubungan kita yang rapuh ini. <br /><br /> Terima kasih udah mempercayai Wa sebagai orang yang serius dan bener-bener niat untuk menjalani dan mempertahankan hubungan ini sampai ke jenjang pernikahan. Wa bukan orang yang paling sempurna untuk Lu, Juga bukan orang yang paling cocok untuk lu, Tetapi ketahuilah bahwa orang yang paling tidak sempurna ini, adalah orang yang akan membuat Lu menjadi orang paling bahagia di dunia ini.",
+            ]);
+          })();
+        },
+      }).mount("#app");
+    </script>
+
+    <!-- Audio -->
+    <script>
+      // Mengambil elemen audio
+      var audio = document.getElementById("mySong");
+
+      // Mulai pemutaran audio ketika halaman dimuat
+      window.onload = function () {
+        audio.play();
+      };
+
+      // Event listener untuk mendeteksi saat audio selesai diputar
+      audio.addEventListener(
+        "ended",
+        function () {
+          // Mulai ulang audio
+          this.currentTime = 0;
+          this.play();
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
